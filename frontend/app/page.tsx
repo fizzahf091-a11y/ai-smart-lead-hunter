@@ -1,62 +1,105 @@
-import React from 'react';
-import { Camera, Save, User, Mail, Briefcase } from 'lucide-react';
+export default function Home(){
+  return(
 
-export default function Home() {
-  return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4">
-      <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-6 space-y-6">
-        
-        {/* Header */}
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-950">AI Smart-Lead Hunter</h1>
-          <p className="text-sm text-gray-500 mt-1">Scan business cards and save directly to CRM</p>
-        </div>
-
-        {/* Scan Button (Camera Action Placeholder) */}
-        <button className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-xl transition-all shadow-md shadow-blue-100">
-          <Camera size={20} />
-          Scan Business Card
-        </button>
-
-        <div className="relative flex py-2 items-center">
-          <div className="flex-grow border-t border-gray-200"></div>
-          <span className="flex-shrink mx-4 text-gray-400 text-xs uppercase tracking-wider">Lead Information</span>
-          <div className="flex-grow border-t border-gray-200"></div>
-        </div>
-
-        {/* Dynamic Form Framework */}
-        <form className="space-y-4">
-          <div>
-            <label className="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">Full Name</label>
-            <div className="relative">
-              <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400"><User size={18} /></span>
-              <input type="text" placeholder="John Doe" className="w-full pl-10 pr-3 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900" />
-            </div>
-          </div>
-
-          <div>
-            <label className="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">Email Address</label>
-            <div className="relative">
-              <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400"><Mail size={18} /></span>
-              <input type="email" placeholder="john@company.com" className="w-full pl-10 pr-3 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900" />
-            </div>
-          </div>
-
-          <div>
-            <label className="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">Company</label>
-            <div className="relative">
-              <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400"><Briefcase size={18} /></span>
-              <input type="text" placeholder="Tech Solutions Inc." className="w-full pl-10 pr-3 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900" />
-            </div>
-          </div>
-
-          <button type="submit" className="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-4 rounded-xl transition-all shadow-md shadow-emerald-100 mt-2">
-            <Save size={20} />
-            Save to CRM
-          </button>
-        </form>
-
-      </div>
+    <main className="min-h-screen bg-grid flex flex-col items-center overflow-hidden">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center p-10 ">
+  
+  {/* --- LEFT SIDE: TEXT CONTENT --- */}
+  <div className="text-left space-y-8 ">
+    {/* Badge (Pehle wala hi use karein) */}
+    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/10 text-[10px] font-medium tracking-widest text-blue-400 uppercase">
+       <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+       AI-Powered Document Intelligence
     </div>
+
+    {/* Heading */}
+    <h1 className="text-5xl font-extrabold text-white leading-tight font-space">
+      Scan Extract. <br />
+      <span className="bg-gradient-to-r from-cyan-400 to-blue-700 bg-clip-text text-transparent">Store Anywhere.</span>
+    </h1>
+
+    {/* Description */}
+    <p className="text-gray-400 text-md max-w-xl leading-relaxed">
+      Scan business cards, invoices and documents with AI. Automatically extract  information and save everything securely in your CRM.
+    </p>
+
+    {/* Two Buttons Group */}
+    <div className="flex items-center gap-4">
+      <button className="bg-gradient-to-r from-[#0bb9b9] to-[blue] hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg shadow-blue-500/20">
+        Start Scanning
+      </button>
+      <button className="flex items-center gap-2 text-white border border-white/14 rounded-lg hover:bg-cyan-400 font-semibold px-6 py-3 transition-all shadow-lg shadow-blue-500/20">
+        Watch Demo <span className="text-xl">→</span>
+      </button>
+    </div>
+  </div>
+
+
+  {/* --- RIGHT SIDE: SCANNER VISUAL --- */}
+  <div className="relative px-10 py-4 rounded-[32px] border border-white/14 bg-[#020617]/40 backdrop-blur-2xl shadow-[0_0_50px_-8px_rgba(34,211,238,0.3)] max-w-md w-full justify-self-end">
+      {/* Top ROW: Live Preview & AI OCR */}
+  {/* Top Badges */}
+  <div className="flex justify-between items-center mb-8">
+    <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/30  border border-emerald-500/20 text-emerald-400 text-[10px] font-bold">
+      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+      LIVE PREVIEW
+    </div>
+    <div className="text-gray-500 text-[12px] font-bold tracking-widset">AI OCR</div>
+  </div>
+
+  {/* 2. SCANNING AREA (The Viewfinder)*/}
+  <div className="relative p-8 bg-gradient-to-br from-[#02071c] to-[#020617] rounded-2xl border border-white/14 mb-6">
+
+     {/* Blue Corners (Viewfinder) */}
+     <div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-cyan-500/90 "></div>
+     <div className="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 border-cyan-500/90"></div>
+     <div className="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 border-cyan-500/90"></div>
+     <div className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-cyan-500/90"></div>
+
+     { /* 3. ACTUAL BUSINESS CARD(The Inner Card) */}
+     <div className="relative bg-gradient-to-br from-[#1e293b] to-[#00f172a] rounded-xl p-6 shadow-2xl border border-white/10 overflow-hidden">
+     
+     {/* Moving Scan Line */}
+     <div className="animate-scan"></div>
+          <div className="flex justify-between items-start">
+          {/* Left Side: Info */}
+          <div className="space-y-4">
+            <div>
+             <h4 className="text-white text-lg font-bold">Alex Morgan</h4>
+             <p className=" text-xs mt-0.5">Sales Manager</p>
+            </div>
+            <div className="space-y-2 text-[11px]">
+            <div className="flex items-center gap-2">
+            <span className="opacity-70">📧</span> alex@example.com</div>
+            <div className="flex items-center gap-2">
+            <span className="opacity-70">🌐</span> www.scanvault.com
+            </div>
+            <div className="flex items-center gap-2">
+             <span className="opacity-70">📍</span> New York, USA </div>
+            </div>
+        </div>
+             {/* Right Side: Large 'M' Logo */}
+
+            <div className="font-bold text-cyan-500 text-4xl opacity-80 mt-1">M</div>
+          </div>
+     </div>
+  </div>
+
+ {/* BOTTOM ROW: Status & Ready Badge */}
+  <div className="flex justify-between items-center px-2">
+    <div className="flex text-[10px] text-emerald-400 flex items-center gap-2">
+       <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+       Auto detecting edges...
+    </div>
+    <div className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-[10px] font-bold">
+       OCR Ready
+    </div>
+  </div>
+
+
+</div>
+</div>
+
+    </main>
   );
 }
