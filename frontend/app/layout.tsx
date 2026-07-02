@@ -18,7 +18,8 @@ export default function RootLayout({
     <body className={`${inter.variable}${spaceGrotesk.variable} font-sans bg-[#020617]  text-white min-h-screen flex flex-col`}>
     <Navbar />{/* Showing on all pages */}
     <main className="flex-grow">
-    {children}</main>{/* Home Pages will shown here */}
+    {children}</main>
+    
    <Footer />
     </body>
     </html>

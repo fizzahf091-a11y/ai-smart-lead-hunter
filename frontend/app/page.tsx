@@ -2,7 +2,7 @@ export default function Home(){
   return(
 
     <main className="min-h-screen bg-grid flex flex-col items-center overflow-hidden">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center p-10 ">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center p-10 px-20 ">
   
   {/* --- LEFT SIDE: TEXT CONTENT --- */}
   <div className="text-left space-y-8 ">
